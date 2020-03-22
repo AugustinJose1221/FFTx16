@@ -3,7 +3,6 @@
 `timescale 1ns / 1ps
 module butterfly_tb;
 
-	// Inputs
 	reg clock;
 	reg [15:0] x1;
 	reg [15:0] y1;
@@ -18,7 +17,6 @@ module butterfly_tb;
 	wire [15:0] yout2;
 	wire done;
 
-	// Instantiate the Unit Under Test (UUT)
 	butterfly uut (
 		.clock(clock), 
 		.x1(x1), 
@@ -34,7 +32,6 @@ module butterfly_tb;
 	);
 
 	initial begin
-		// Initialize Inputs
 		clock = 0;
 		x1 = 0;
 		y1 = 0;
@@ -42,18 +39,13 @@ module butterfly_tb;
 		y2 = 0;
 		zangle = 0;
 
-		// Wait 100 ns for global reset to finish
 		#100;
         
-		// Add stimulus here
-		// Add stimulus here
 		x1 =3200;
 		y1 = 0;
 		x2 = 3200;
 		y2 = 0;
-		//zangle = 'b00100000000000000000000000000000;
-		zangle = 'b11100000000000000000000000000000; //-45 degrees
-		//zangle = 0;
+		zangle = 'b11100000000000000000000000000000; 
 		
 		 clock = 'b0;
 		 forever
